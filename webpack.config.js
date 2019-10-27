@@ -35,16 +35,16 @@ module.exports = {
       { test: /\.css$/, use: ['style-loader', 'css-loader'] }, 
 
       // 处理 .less 文件的 loader（npm i less-loader less -D）
-      // { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }, 
+      { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }, 
 
       // 处理 .scss 文件的 loader（npm i sass-loader node-sass --save-dev）
       // { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }, 
 
-      // 处理 图片路径的 loader（npm i url-loader file-loader --save-dev）
-      // { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=1024&name=[hash:8]-[name].[ext]' }, 
+      //处理 图片路径的 loader（npm i url-loader file-loader --save-dev）
+      { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=1024&name=[hash:8]-[name].[ext]' }, 
 
-      // 处理 字体文件的 loader
-      // { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' },  
+      //处理 字体文件的 loader
+      { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' },  
 
       // 配置 Babel 来转换高级的ES语法
       //{ test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }, 
