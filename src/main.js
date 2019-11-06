@@ -9,6 +9,10 @@ Vue.use(VueRouter)
 //安装导入 vue-resource 包
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+Vue.http.options.root = 'http://vue.studyit.io'
+Vue.http.options.emulateJSON = true
+
+import '../mock/mock.js'
 
 //按需导入mint-ui
 //首先，安装 babel-plugin-component（npm install babel-plugin-component -D）
@@ -33,7 +37,32 @@ import app from './App.vue'
 //导入 路由 组件
 import router from './router.js'
 
+//安装moment 定义全局过滤器
+import Moment from 'moment'
+Vue.filter('dataFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+  return Moment(dataStr).format(pattern)
+})
 
+import Vuex from 'vuex'
+Vue.use(Vuex)
+var store = new Vuex.store({
+  state:{
+    car:[
+      {
+        id:1,
+        price:998,
+        count:3,
+        selected:true
+      }
+    ]
+  },
+  mutations:{
+
+  },
+  getters:{
+
+  }
+})
 
 //创建 vue 对象
 var vm = new Vue({
@@ -41,7 +70,7 @@ var vm = new Vue({
   data: {
 
   },
-  methods:{
+  methods: {
 
   },
   router: router,

@@ -37,6 +37,7 @@
 <style lang="less" scoped>
 #app {
   padding-top: 40px;
+  padding-bottom: 50px;
   overflow: hidden;
   .v-enter{
     opacity: 0;
